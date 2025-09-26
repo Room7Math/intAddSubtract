@@ -4,18 +4,7 @@ let score = 0;
 let incorrectAnswers = [];
 let questions = [];
 
-    // Get the current date and time
-    const now = new Date();
 
-    // Format the date (example: "Month Day, Year")
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = now.toLocaleDateString('en-US', options);
-
-    // Get the HTML element by its ID
-    const dateElement = document.getElementById('current-date');
-
-    // Update the content of the HTML element
-    dateElement.textContent = formattedDate;
 
 
 function generateQuestion() {
@@ -121,7 +110,7 @@ const d = new Date();
   // Generate and display checksum
   generateHash(resultData).then(hash => {
     resultHTML += `<p><strong>Checksum:</strong> ${hash}</p>`;
-      resultHTML +='<p><strong>d</string></p>';
+      resultHTML +=`<p><strong></string>${d}</p>`;
     resultHTML += `<button onclick="restartQuiz()">Try Again</button>`;
     results.innerHTML = resultHTML;
   });
@@ -139,6 +128,7 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
 
 
 
