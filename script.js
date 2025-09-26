@@ -8,7 +8,7 @@ let questions = [];
 
 
 function generateQuestion() {
-  if (currentQuestion >= 10) {
+  if (currentQuestion >= 1) {
     showResults();
     return;
   }
@@ -132,3 +132,4 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
