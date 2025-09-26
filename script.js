@@ -110,7 +110,11 @@ const d = new Date();
   // Generate and display checksum
   generateHash(resultData).then(hash => {
     resultHTML += `<p><strong>Checksum:</strong> ${hash}</p>`;
-    //  resultHTML +=`<p><strong></string>${d}</p>`;
+    // Add date stamp
+const dateStamp = document.getElementById("dateStamp");
+const now = new Date();
+dateStamp.textContent = "Completed on: " + now.toLocaleString();
+
     resultHTML += `<button onclick="restartQuiz()">Try Again</button>`;
     results.innerHTML = resultHTML;
   });
@@ -128,6 +132,7 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
 
 
 
