@@ -120,6 +120,8 @@ dateStamp.textContent = "Completed on: " + now.toLocaleString();
   });
 }
 
+
+
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
@@ -132,6 +134,7 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
 
 
 
