@@ -4,6 +4,20 @@ let score = 0;
 let incorrectAnswers = [];
 let questions = [];
 
+    // Get the current date and time
+    const now = new Date();
+
+    // Format the date (example: "Month Day, Year")
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = now.toLocaleDateString('en-US', options);
+
+    // Get the HTML element by its ID
+    const dateElement = document.getElementById('current-date');
+
+    // Update the content of the HTML element
+    dateElement.textContent = formattedDate;
+
+
 function generateQuestion() {
   if (currentQuestion >= 10) {
     showResults();
@@ -123,3 +137,4 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
