@@ -8,7 +8,7 @@ let questions = [];
 
 
 function generateQuestion() {
-  if (currentQuestion >= 1) {
+  if (currentQuestion >= 10) {
     showResults();
     return;
   }
@@ -106,21 +106,19 @@ function showResults() {
     incorrect: incorrectAnswers
   });
 
-const d = new Date();
   // Generate and display checksum
   generateHash(resultData).then(hash => {
     resultHTML += `<p><strong>Checksum:</strong> ${hash}</p>`;
-    // Add date stamp
-const dateStamp = document.getElementById("dateStamp");
-const now = new Date();
-dateStamp.textContent = "Completed on: " + now.toLocaleString();
+    
+    // Create a new Date object for the timestamp
+    const completionDate = new Date();
+    // Add the formatted date and time to the results HTML
+    resultHTML += `<p>Quiz completed on: ${completionDate.toLocaleString()}</p>`;
 
     resultHTML += `<button onclick="restartQuiz()">Try Again</button>`;
     results.innerHTML = resultHTML;
   });
 }
-
-
 
 function restartQuiz() {
   currentQuestion = 0;
@@ -134,11 +132,3 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
-
-
-
-
-
-
-
-
