@@ -5,7 +5,9 @@ let incorrectAnswers = [];
 let questions = [];
 
 
-
+document.querySelectorAll('input[type=number]').forEach(input => {
+  input.addEventListener('wheel', e => e.preventDefault());
+});
 
 function generateQuestion() {
   if (currentQuestion >= 10) {
@@ -132,5 +134,6 @@ function restartQuiz() {
 }
 
 window.onload = generateQuestion;
+
 
 
